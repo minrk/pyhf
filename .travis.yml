@@ -37,6 +37,9 @@ jobs:
   include:
   - name: "Python 2.7 Notebook Tests"
     python: '2.7'
+    before_install:
+      - pip install --upgrade pip setuptools wheel
+      - pip install pathlib
     script:
       - pytest tests/test_notebooks.py
     after_success: skip
